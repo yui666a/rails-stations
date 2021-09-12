@@ -1,0 +1,30 @@
+<head>
+    <meta charset="utf-8">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+    
+</head>
+<body>
+    
+
+    <!-- カード -->
+    <section class="card-sec ">
+        <div class="card-container">
+
+            <% @movies.each do |mv| %>
+                <!-- card-item -->
+                <div class="card-item">
+                    <a class="card-link" href="#">
+                        <img sclass="card-img" src=<%= mv.image_url %> alt="">
+                        <h2 class="card-title">
+                            <%= mv.name %>
+                        </h2>
+                        <div class="card-button">予約/詳細</div>
+                    </a><!-- /card-content -->
+                </div> <!-- /card-item -->
+            <% end %>
+
+        </div> <!-- /card-container -->
+    </section> <!-- /card-sec -->
+</body>

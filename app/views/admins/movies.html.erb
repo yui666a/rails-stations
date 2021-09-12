@@ -1,0 +1,46 @@
+<head>
+    <meta charset="utf-8">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+
+</head>
+<body>
+
+<table border="1" style="border-collapse: collapse">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>映画タイトル</th>
+      <th>公開年</th>
+      <th>上映中か</th>
+      <th>概要</th>
+      <th>画像url</th>
+      <th>作成日時</th>
+      <th>更新日時</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @movies.each do |mv| %>
+        <tr>
+            <td><%= mv.id %></td>
+            <td><%= mv.name %></td>
+            <td><%= mv.year %></td>
+            <td>
+            <% if (mv.is_showing) %>
+              上映中
+            <% else %>
+              上映予定
+            <% end %>
+            </td>
+            <td><%= mv.description %></td>
+            <td><a href="<%= mv.image_url %>">画像</a></td>
+            <td><%= mv.created_at %></td>
+            <td><%= mv.updated_at %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+</body>

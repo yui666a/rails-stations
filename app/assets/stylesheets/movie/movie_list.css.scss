@@ -1,0 +1,32 @@
+/*----------------------------
+カード
+-----------------------------*/
+.card-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.card-item {
+    width: 100%;
+    max-width: 342px;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    background-color: #c4dfba;
+}
+
+.card-img {
+    width: 100%;
+    max-width: 310px;
+    height: auto;
+    vertical-align: bottom; /* 画像の下の余白を埋める */
+}
+
+.card-title {
+    margin-top: 20px;
+    color: #6F7579;
+    font-size: 20px;
+    line-height: 1.2;
+}

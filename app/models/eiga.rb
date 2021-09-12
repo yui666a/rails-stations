@@ -1,0 +1,2 @@
+class Eiga < ApplicationRecord
+end

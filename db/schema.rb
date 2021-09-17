@@ -10,16 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_12_091537) do
+ActiveRecord::Schema.define(version: 2021_09_17_160341) do
 
   create_table "eigas", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.integer "year"
     t.string "description"
     t.string "image_url"
-    t.boolean "is_showing"
+    t.boolean "is_showing", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_eigas_on_name", unique: true
   end
 
 end

@@ -1,0 +1,56 @@
+<html>
+    <body>
+        <%= flash[:alert] %>
+        <%= flash[:danger] %>
+        
+        <% @movies.each do |mv| %>
+            <form action="/admin/movies/<%= mv.id %>" method="post">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+                <input type="hidden" name="id" value="<%= mv.id %>">
+
+                <label for="name">映画タイトル：</label>
+                <input type="text" name="name" size="40" value="<%= mv.name %>"><br/>
+                
+                <label for="year">公開年：</label>
+                <input type="text" name="year" size="40" value="<%= mv.year %>"><br/>
+                
+                <label for="is_showing" id="switch">上映中か：</label>
+                <input type="checkbox" id="scales" name="is_showing" checked>
+                <span class="title">公開予定</span><br/>
+                
+                <label for="description">概要：</label>
+                <textarea name="description" rows="4" cols="40"><%= mv.description %></textarea><br/>
+                
+                <label for="image_url">画像URL：</label>
+                <input type="text" name="image_url" size="40" value="<%= mv.image_url %>"><br/>
+
+                <input type="reset" value="Close">
+                <!-- この1行を追加！ -->
+                <input type="hidden" name="_method" value="PUT"> 
+                <input type="submit" value="Save Changes">
+            </form>
+        <% end %>
+
+
+        <% @movies.each do |mv| %>
+            <form method="post" action="?">
+            <!-- <form action="/admin/movies/<%= mv.id %>" method="post">
+                <input type="hidden" name="method" value="delete">
+                <input type="submit" value="DELETE"> -->
+                <input type="hidden" name="_method" value="DELETE"> <!-- この1行を追加！ -->
+                <button type="submit" formaction="/admin/movies/<%= mv.id %>" name="_METHOD" vlaue="delete">delete</button>
+
+            </form>
+        <% end %>
+
+
+    </body>
+
+    <script type="text/javascript">
+        const checkbox = document.getElementById('switch');
+        checkbox.addEventListener('click', () => {
+            const title = document.querySelector('.title');
+            title.textContent = checkbox.checked ? '上映中' : '公開予定';
+        });
+    </script>
+</html>

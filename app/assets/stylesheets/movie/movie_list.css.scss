@@ -1,3 +1,9 @@
+
+
+html{
+    background-color: rgba(245,252,254, 1);
+}
+
 /*----------------------------
 カード
 -----------------------------*/
@@ -10,8 +16,9 @@
 
 .card-item {
     width: 100%;
-    max-width: 342px;
-    margin: 0 auto;
+    max-width: 302px;
+    margin: 10px;
+    padding: 1%;
     text-align: center;
     justify-content: center;
     background-color: #c4dfba;
@@ -30,3 +37,4 @@
     font-size: 20px;
     line-height: 1.2;
 }
+

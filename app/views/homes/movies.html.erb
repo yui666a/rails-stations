@@ -6,8 +6,17 @@
     
 </head>
 <body>
-    
+    <form action="/movies" method="get">
+        <input type="radio" name="is_showing" value="" checked="checked">すべて
+        <input type="radio" name="is_showing" value="0">公開予定
+        <input type="radio" name="is_showing" value="1">公開中
+        <br/>
+        <input type="text" name="keyword" size="40" placeholder="キーワードで検索する"><br/>
 
+        <input type="submit" value="検索">
+    </form>
+
+    
     <!-- カード -->
     <section class="card-sec ">
         <div class="card-container">

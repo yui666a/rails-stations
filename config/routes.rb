@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   put "admin/movies/:id" => "admins#update"
   # station 4
   delete 'admin/movies/:id', to: 'admins#delete'
+  # station 5
+  get "admin/movies" => "admins#movies"
 end
